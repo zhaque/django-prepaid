@@ -10,7 +10,7 @@ class ValidUnitPackManager(models.Manager):
             expires__gt=datetime.date.today(), quantity__gt=0)
 
 def _default_expires():
-    if settings.hasattr('PREPAID_DEFAULT_EXPIRY_PERIOD'):
+    if hasattr(settings,'PREPAID_DEFAULT_EXPIRY_PERIOD'):
         return datetime.date.today() + datetime.timedelta(
             settings.PREPAID_DEFAULT_EXPIRY_PERIOD)
 
