@@ -58,8 +58,8 @@ class UnitPack(models.Model):
             up.save()
 
 # provide default value for initial_quantity
-def _handle_post_init(sender, instance=None, **kwargs):
+def _handle_pre_save(sender, instance=None, **kwargs):
     assert instance is not None
-    if instance.initial_quantity is None:
+    if instance.pk is None and instance.initial_quantity is None:
         instance.initial_quantity = instance.quantity
-models.signals.post_init.connect(_handle_post_init, sender=UnitPack)
+models.signals.pre_save.connect(_handle_pre_save, sender=UnitPack)
