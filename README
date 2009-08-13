@@ -1,9 +1,5 @@
-                                 Django prepaid
-                                 ==============
-
-Author: Maciej Pasternacki <maciej@pasternacki.net>
-Date: 2009/06/18 16:07:25
-
+Django prepaid
+==============
 
 Django-prepaid is a low-level Django application to support prepaid
 service functionality. User can purchase a pack of `units' (it is up
